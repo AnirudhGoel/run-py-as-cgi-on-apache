@@ -12,8 +12,11 @@ Below this line, paste
 </Directory>
 ```
 Then run ```sudo chmod a+x cgi-bin/file_name.py``` to change file permissions.
+
 Open ```localhost/cgi-bin/file_name.py``` in browser.
+
 ```.html``` files won't run in ```cgi-bin``` folder.
+
 Run them from ```htdocs```.
 
 # Instructions for the ```py``` file to be run as ```cgi``` file
