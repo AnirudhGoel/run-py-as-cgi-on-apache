@@ -1,5 +1,11 @@
 #!/usr/bin/python3
 
+# 
+# 
+# This files makes a DB and adds some data to it but currently it doesn't print data from it. It just prints some dummy data.
+# 
+# 
+
 import sqlite3
 import json
 
