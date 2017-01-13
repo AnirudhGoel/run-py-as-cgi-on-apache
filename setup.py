@@ -1,13 +1,15 @@
 #!/usr/bin/python3
 
 import sqlite3
+import json
 
+response = {}
 conn = sqlite3.connect("store.db")
-print("Connected to database")
+# print("Connected to database")
 
 try:
     conn.execute("CREATE TABLE IF NOT EXISTS STORE (ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, NAME TEXT NOT NULL, QUANTITY INT NOT NULL DEFAULT 0, DESCRIPTION TEXT, CATEGORY TEXT)")
-    print("Created Table STORE")
+    # print("Created Table STORE")
 except Exception as e:
     print(e)
 
@@ -32,14 +34,22 @@ if number_of_rows == 0:
 #
 # Display data of Table
 #
-try:
-    cursor = conn.execute("SELECT * FROM STORE")
-    for row in cursor:
-        print("ID = ", row[0])
-        print("Name = ", row[1])
-        print("Quantity = ", row[2])
-        print("Description = ", row[3])
-        print("Category = ", row[4], "\n")
-    conn.close()
-except Exception as e:
-    print(e)
+# try:
+#     cursor = conn.execute("SELECT * FROM STORE")
+#     for row in cursor:
+#         print("ID = ", row[0])
+#         print("Name = ", row[1])
+#         print("Quantity = ", row[2])
+#         print("Description = ", row[3])
+#         print("Category = ", row[4], "\n")
+#     conn.close()
+# except Exception as e:
+#     print(e)
+
+
+response["Name"] = "Luke"
+response["Country"] = "Canada"
+
+print("Content-Type: application/json\n")
+
+print(json.dumps(response, ensure_ascii=False))
